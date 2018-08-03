@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<!-- Define Angular Application -->
+<html ng-app="virginApp">
+
+<head>
+    <!-- CSS Reference Style -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"/>
+
+    <!-- Angular Reference  -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+    <!-- https://github.com/720kb/angular-datepicker -->
+    <link href="node_modules/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css"/>
+    <script src="node_modules/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+
+    <!--
+
+    By Steven Levithan
+    http://blog.stevenlevithan.com/archives/date-time-format
+    -->
+    <script src="http://stevenlevithan.com/assets/misc/date.format.js"></script>
+
+    <!-- Local Script File -->
+    <script src="script.js"></script>
+</head>
+
+<!-- Define Angular controller -->
+<body ng-controller="mainController">
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Virgin Holidays ~ Flight Information Display</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div id="main">
+        <!-- Angular Template | This is where content will be injected -->
+        <div ng-view></div>
+    </div>
+</div>
+
+<footer class="text-center">
+    <div class="container">
+        <p>Copyright &copy; Virgin Holidays 2018 | Develop by Sabahat Afzal </p>
+    </div>
+</footer>
+
+</body>
+
+</html>

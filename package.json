@@ -1,0 +1,14 @@
+{
+  "name": "Virgin Holidays",
+  "version": "1.0.0",
+  "description": "Virgin Holidays search for flights",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sabahat Afzal",
+  "license": "ISC",
+  "dependencies": {
+    "angularjs-datepicker": "^2.1.23"
+  }
+}

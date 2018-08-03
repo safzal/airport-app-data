@@ -1,0 +1,89 @@
+<div class="jumbotron">
+    <div class="col-sm-12">
+        <h2>Search Flights</h2>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-sm-6">
+        <datepicker selector="form-control"
+                    button-prev="<i class='fa fa-arrow-left'></i>"
+                    button-next="<i class='fa fa-arrow-right'></i>"
+                    date-format="yyyy-MM-dd"
+                    date-set='{{ toDate }}'
+                    date-min-limit='{{ yesterDate }}'
+                    date-typer="true"
+                >
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lg fa-calendar"></i></span>
+                <input class="form-control" placeholder="Choose a date" id="calendarDate"/>
+            </div>
+        </datepicker>
+    </div>
+    <div class="col-sm-6">
+        <button class="btn-sm" ng-click="showSchedule()">Search flights</button>
+    </div>
+
+    <div class="clearfix"></div>
+    <br/>
+
+    <div class="col-sm-12">
+        <form>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Search" ng-model="Departure_Time">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="col-sm-12">
+        <table class="table table-bordered table-striped">
+
+            <thead>
+            <tr>
+                <td>
+                    <a href="javascript:" ng-click="sortType = 'Departure_Time'; sortReverse = !sortReverse">
+                        Departure Time
+                        <span ng-show="sortType == 'Departure_Time' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'Departure_Time' && sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </td>
+                <td>
+                    <a href="javascript:" ng-click="sortType = 'Destination'; sortReverse = !sortReverse">
+                        Destination
+                        <span ng-show="sortType == 'Destination' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'Destination' && sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </td>
+                <td>
+                    <a href="javascript:" ng-click="sortType = 'Destination_Airport_IATA'; sortReverse = !sortReverse">
+                        Destination Airport IATA
+                        <span ng-show="sortType == 'Destination_Airport_IATA' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'Destination_Airport_IATA' && sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </td>
+                <td>
+                    <a href="javascript:" ng-click="sortType = 'Flight_No'; sortReverse = !sortReverse">
+                        Flight No
+                        <span ng-show="sortType == 'Flight_No' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'Flight_No' && sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </td>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="data in rowData | orderBy:sortType:sortReverse | filter:Departure_Time">
+                <td>{{ data.Departure_Time }}</td>
+                <td>{{ data.Destination }}</td>
+                <td>{{ data.Destination_Airport_IATA }}</td>
+                <td>{{ data.Flight_No }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clearfix"></div>
+
+</div>
