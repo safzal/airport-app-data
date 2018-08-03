@@ -137,25 +137,28 @@ virginApp.controller('mainController', function ($scope, $http) {
     };
 
     /**
-     *
+     * This methods is to compare timing with current time.
      * @param compareTime
      * @returns {*}
      */
     function currentTimeCompare (compareTime) {
-
+        // get the current time
         var date = new Date();
         var time = date.format("HH:MM");
-
-        console.log("time: ", time, " compareTime: ", compareTime);
-
+        // compare with the flights time
         if (time === compareTime) {
             return 0;
         }
-        var time1 = compareTime.split(':');
-        var time2 = time.split(':');
-        if (eval(time1[0]) > eval(time2[0])) {
-            return true;
-        } else if (eval(time1[0]) == eval(time2[0]) && eval(time1[1]) > eval(time2[1])) {
+        // break the time into tow parts
+        var flightTime = compareTime.split(':');
+        var currentTime = time.split(':');
+        
+        // check the hours of the flight time with current time
+        if (eval(flightTime[0]) > eval(currentTime[0])) {
+            return true; 
+        }
+        // check the hours is equal so now checking the minutes with current time minutes
+        else if (eval(flightTime[0]) == eval(currentTime[0]) && eval(flightTime[1]) > eval(currentTime[1])) {
             return true;
         } else {
             return false;
