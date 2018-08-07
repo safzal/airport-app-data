@@ -15,6 +15,14 @@ but if you want you can click on any columns name to change the order.
 npm install  
 
 ```
+# Screenshots
+ 
+![Home](Home.png)
+![Calendar](Calendar.png)
+![Today Flights](Date-Today.png)
+![Date](Date.png)
+![Search](Search.png)
+
 
 # Virgin Holidays ~ Flight Information Display
 ## Rules
