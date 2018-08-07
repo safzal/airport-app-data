@@ -17,10 +17,15 @@ npm install
 ```
 # Screenshots
  
+Home Page
 ![Home](Home.png)
+Calendar
 ![Calendar](Calendar.png)
+Today Flights 
 ![Today Flights](Date-Today.png)
-![Date](Date.png)
+Future Date
+![Date](Next-Date.png)
+Search Flight
 ![Search](Search.png)
 
 
